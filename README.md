@@ -1,0 +1,111 @@
+# Saturn V Rocket Nozzle FEA Analysis
+
+This project focuses on a **Finite Element Analysis (FEA)** of the Saturn V rocket's F1 engine nozzle, specifically analyzing the **bolted flange joint** connecting the mid and lower parts of the nozzle. Designed and simulated by **Prashant Kamble** as an advanced structural engineering analysis.
+
+## Problem Specification
+
+The **Saturn V rocket** was used to launch humans to the moon, and its first stage was powered by five F1 engines. This analysis explores the safety of the bolted joint connecting the engine's **mid nozzle** and **lower nozzle** using ANSYS.
+
+The objective is to:
+- Analyze the stress and strain in the bolted flange joint.
+- Identify the gaps that may form between the nozzle sections due to loading.
+- Determine if the bolts can withstand the applied forces.
+
+### Components:
+- **Mid Nozzle**
+- **Lower Nozzle**
+- **100 Bolts (Flange Joint)**
+
+### Visual Overview:
+- Saturn V Rocket  
+  ![Saturn V Rocket](images/saturn_v.png)
+  
+- F1 Engine Nozzle and Bolted Flange  
+  ![F1 Engine Nozzle](images/f1_nozzle.png)
+
+- ANSYS Model Closeup:  
+  ![ANSYS Model](images/ansys_model_closeup.png)
+
+## File Structure
+
+Below is the structure of the repository:
+## Project Structure
+
+```plaintext
+Saturn-V-F1-Nozzle-Joint-FEA/
+├── README.md
+├── LICENSE
+├── /images/
+│   ├── saturn_v.png
+│   ├── f1_nozzle.png
+│   └── ansys_model_closeup.png
+└── /FEA_Simulations/
+    ├── SaturnV_F1_ANSYS_Model.wbpz
+    ├── SaturnV_F1_Mesh.stl
+    ├── SaturnV_F1_SimulationResults.rst
+    └── SaturnV_F1_MaterialData.engd
+
+```
+
+
+
+### File Descriptions:
+- **`SaturnV_F1_ANSYS_Model.wbpz`**: The ANSYS Workbench project file that contains the setup of the FEA model.
+- **`SaturnV_F1_Mesh.stl`**: Geometry and meshing of the F1 nozzle and bolted flange.
+- **`SaturnV_F1_SimulationResults.rst`**: The results file from running the analysis, which includes stress distributions, deformations, and safety margins.
+- **`SaturnV_F1_MaterialData.engd`**: Material properties data used in the simulation, including Young's modulus, Poisson's ratio, and thermal expansion coefficients.
+
+## Analysis Objective
+
+We will simulate the bolted joint using **non-linear finite element analysis** in **ANSYS** to:
+1. Evaluate the safety of the flange bolts.
+2. Understand the behavior of the joint under different thermal and pressure conditions.
+3. Investigate the gaps formed between the mid and lower nozzle.
+
+## Material Properties
+
+| Component | Material            | Young's Modulus (GPa) | Poisson Ratio | Coefficient of Thermal Expansion (µm/°C) |
+| --------- | ------------------- | --------------------- | ------------- | --------------------------------------- |
+| Nozzles   | 304 Stainless Steel  | 210                   | 0.27          | 16.4                                    |
+| Bolts     | Inconel 718          | 200                   | 0.29          | 13.0                                    |
+
+## Boundary Conditions and Assumptions
+
+- **Pressure**: The pressure acting along the nozzle varies along its length. The exit pressure is set to **172.7 kPa**, while the pressure at the flange is **4,727 kPa**.
+- **Temperature**: The thermal load on the nozzle reaches a maximum of **500°C**, which is critical for analyzing thermal expansion effects.
+- **Bolted Joint**: We will analyze the forces acting on the bolts and the overall deformation of the joint.
+
+## How to Use
+
+1. **Clone the Repository**:
+   - Open a terminal and run:
+     ```bash
+     git clone https://github.com/Prashantsk45/Saturn-V-F1-Nozzle-Joint-FEA.git
+     ```
+   - Navigate to the repository directory:
+     ```bash
+     cd Saturn-V-F1-Nozzle-Joint-FEA
+     ```
+
+2. **Open the ANSYS Project**:
+   - Open **ANSYS Workbench**.
+   - In ANSYS, go to **File > Open** and select the `FEA_Simulations/SaturnV_F1_ANSYS_Model.wbpz` file.
+
+3. **Load the Geometry and Mesh**:
+   - Ensure that the geometry and mesh file (`FEA_Simulations/SaturnV_F1_Mesh.stl`) is properly linked within the project.
+   - If needed, re-mesh the model based on the setup provided.
+
+4. **Set the Material Properties**:
+   - Import the material data from `FEA_Simulations/SaturnV_F1_MaterialData.engd` into your ANSYS Workbench project to apply the correct material properties.
+
+5. **Run the Simulation**:
+   - Set the boundary conditions for temperature and pressure as described in the problem specifications.
+   - Run the simulation to generate the results.
+
+6. **View Results**:
+   - After the simulation completes, open the **Results** module in ANSYS Workbench.
+   - Load the `FEA_Simulations/SaturnV_F1_SimulationResults.rst` file to review the stress, deformation, and safety margin results.
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
