@@ -1,6 +1,8 @@
 # Saturn V F-1 Rocket Engine Nozzle Bolted Joint Non-Linear FEA
 
-![Saturn V Launch Vehicle](images/saturn_v.png)
+<p align="center">
+  <img src="images/saturn_v.png" alt="Saturn V Launch Vehicle" width="650">
+</p>
 
 ## Overview & Executive Summary
 
@@ -39,13 +41,19 @@ The F-1 rocket engine generated $33.4\,\text{MN}$ ($7.5\,\text{M}\,\text{lbf}$) 
 
 To optimize computational efficiency while capturing 3D bolt pretension and contact physics, a **symmetric sector slice** of the nozzle assembly was modeled. 
 
-![F-1 Engine Nozzle and Flange](images/f1_nozzle.png)
+<p align="center">
+  <img src="images/f1_nozzle.png" alt="F-1 Engine Nozzle and Flange" width="480"><br>
+  <sub><b>Figure 1:</b> F-1 Engine Nozzle Assembly & Bolted Flange Interface Geometry</sub>
+</p>
 
 ### Model Simplification & Hand-Calculation Parity
 - The converging-diverging nozzle contour was reduced to a representative cone sector slice at the flange junction.
 - This geometric reduction preserves exact local flange dimensions ($t_{\text{flange}}$, bolt circle radius $R_b$, wall thickness $t$) while allowing closed-form validation using thin-wall and thick-wall pressure vessel equations.
 
-![ANSYS Geometry Close-up](images/ansys_model_closeup.png)
+<p align="center">
+  <img src="images/ansys_model_closeup.png" alt="ANSYS Geometry Close-up" width="550"><br>
+  <sub><b>Figure 2:</b> ANSYS Mechanical Sector CAD Geometry & Flange Bolt Circle Detail</sub>
+</p>
 
 ---
 
@@ -105,7 +113,10 @@ Comparing analytical bolt stress ($\sigma_b = 394.5\,\text{MPa}$) against FEA ex
 
 ### 1. Equivalent (Von-Mises) Stress Distribution
 
-![Equivalent Stress Contour](images/Equivalent_Stress.png)
+<p align="center">
+  <img src="images/Equivalent_Stress.png" alt="Equivalent Stress Contour" width="650"><br>
+  <sub><b>Figure 3:</b> Von-Mises Equivalent Stress Distribution Contour ($248.5\,\text{MPa}$ Peak Stress at Flange Root)</sub>
+</p>
 
 - **Peak Stress Region**: Maximum Von-Mises stress occurs at the fillet junction between the nozzle shell and the flange face, reaching **$248.5\,\text{MPa}$**.
 - **Yield Safety Margin**: Compared to the yield strength of 304 Stainless Steel ($\sigma_y = 290\,\text{MPa}$):
@@ -120,7 +131,7 @@ The thermo-mechanical response was tracked across load steps ($t = 1.0\,\text{s}
 
 | $t = 1.0\,\text{s}$ (Pretension Step) | $t = 2.0\,\text{s}$ (Thermal Gradient) | $t = 3.0\,\text{s}$ (Full Operational Load) |
 | :---: | :---: | :---: |
-| ![Deformation t=1s](images/Total_Deformation_t=1s.png) | ![Deformation t=2s](images/Total_Deformation_t=2s.png) | ![Deformation t=3s](images/Total_Deformation_t=3s.png) |
+| <img src="images/Total_Deformation_t=1s.png" width="220"> | <img src="images/Total_Deformation_t=2s.png" width="220"> | <img src="images/Total_Deformation_t=3s.png" width="220"> |
 | *Initial bolt clamping displacement* | *Radial thermal expansion onset* | *Combined thermo-mechanical equilibrium* |
 
 - **Maximum Radial Displacement**: $2.31\,\text{mm}$ at $t = 3.0\,\text{s}$, predominantly driven by thermal expansion ($\alpha \cdot \Delta T = 16.4\times 10^{-6} \times 475^\circ\text{C} = 0.779\%$ thermal strain).
